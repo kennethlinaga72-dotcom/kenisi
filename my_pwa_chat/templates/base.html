@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Chat</title>
+    <link rel="manifest" href="/static/manifest.json">
+    <style>
+        :root {
+            --bg-color: #f4f1ea;
+            --card-bg: #ffffff;
+            --primary-green: #2d5a4c;
+            --accent-orange: #d9a05b;
+            --text-main: #333;
+        }
+        body {
+            font-family: -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0; padding: 20px;
+            color: var(--text-main);
+        }
+        .container { display: flex; gap: 20px; flex-wrap: wrap; }
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            flex: 1; min-width: 300px;
+        }
+        h2 { margin-top: 0; font-size: 1.5rem; }
+        textarea {
+            width: 100%; border: 1px solid #ddd;
+            border-radius: 10px; padding: 10px;
+            margin-bottom: 15px; box-sizing: border-box;
+        }
+        .btn-green {
+            background: var(--primary-green);
+            color: white; border: none;
+            padding: 10px 20px; border-radius: 20px;
+            cursor: pointer; font-weight: bold;
+        }
+        .btn-outline {
+            background: white; border: 1px solid #ddd;
+            padding: 10px 20px; border-radius: 20px; color: #666;
+        }
+        .message-box {
+            border: 1px solid #eee; border-radius: 15px;
+            padding: 15px; margin-bottom: 15px;
+        }
+        .btn-like {
+            background: var(--accent-orange);
+            color: white; border: none; padding: 5px 15px;
+            border-radius: 15px; margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    {% block content %}{% endblock %}
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
+    </script>
+</body>
+</html>

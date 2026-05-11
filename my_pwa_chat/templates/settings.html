@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="max-width: 400px; margin: 80px auto;" class="card">
+    <h2 style="text-align: center;">Screen4: 修改密碼</h2>
+    
+    <div style="margin-bottom: 20px;">
+        <label>目前的密碼</label>
+        <input type="password" style="width:100%; padding:10px; margin-top:5px; border-radius:10px; border:1px solid #ddd;">
+    </div>
+
+    <div style="margin-bottom: 20px;">
+        <label>新密碼</label>
+        <input type="password" style="width:100%; padding:10px; margin-top:5px; border-radius:10px; border:1px solid #ddd;">
+    </div>
+
+    <button class="btn-green" style="width: 100%;">儲存修改</button>
+    <button class="btn-outline" style="width: 100%; margin-top: 10px;" onclick="window.location.href='/board'">返回留言板</button>
+</div>
+{% endblock %}

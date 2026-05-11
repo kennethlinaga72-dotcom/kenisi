@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="card">
+        <h2>Screen2：留言板</h2>
+        <p style="font-size: 0.9em; color: #666;">登入後可發言、可對每篇文章按讚，並每 5 秒自動同步一次最新留言。</p>
+        
+        <p><strong>請輸入留言內容</strong></p>
+        <textarea rows="5" placeholder="輸入你想分享的內容..."></textarea>
+        
+        <button class="btn-green">送出留言</button>
+        <button class="btn-outline">個人設定</button>
+    </div>
+
+    <div class="card">
+        <h2>即時留言列表</h2>
+        <p style="font-size: 0.8em; color: #888;">資料來源：Firebase Realtime Database</p>
+
+        <div class="message-box">
+            <h3>HI, mobile phone is not working</h3>
+            <p>作者：096014</p>
+            <p>按讚數：1</p>
+            <button class="btn-like">按讚</button>
+        </div>
+
+        <div class="message-box">
+            <h3>HI, good evening~</h3>
+            <p>作者：096014</p>
+            <p>按讚數：1</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
